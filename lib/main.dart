@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:movie_app/details_screen.dart';
+import 'package:movie_app/search_screen.dart';
+import 'package:movie_app/splash_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Movie app',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/search': (context) => SearchScreen(),
+        '/details': (context) => DetailsScreen(),
+      }
+    );
+  }
+}
